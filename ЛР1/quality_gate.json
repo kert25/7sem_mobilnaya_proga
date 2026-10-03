@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "lab": 1,
+  "report_number": 1,
+  "status": "passed",
+  "checked_at": "2026-10-03T08:39:45Z",
+  "checks": [
+    "content_references",
+    "artifacts",
+    "report_docx",
+    "report_pdf",
+    "text_docx"
+  ],
+  "files": [
+    "ЛР1/Отчет_ЛР1.docx",
+    "ЛР1/Отчет_ЛР1.pdf",
+    "ЛР1/text.docx"
+  ],
+  "sha256": {
+    "_context.json": "2e0579dc37a180c9948097db1a3f4e031d41665458086dc0f6ad4460c916019a",
+    "ЛР1/content.json": "80eac91575b12c37ad24d63569ae00cd2ca25d839063600496696f8516caa525",
+    "ЛР1/content_text.json": "f49c982f40978d82e1005c0475f14c0732c73a6623c9647e7186bb5a535ada1b",
+    "ЛР1/Kotlin_lab01_0.pdf": "95798ab9a25fb1583acd62b2a6c0bbef09b0d62ad353440aa56395baa88c96ea",
+    "ЛР1/Main.kt": "a94b0fdb70b6c5295cc5c8bd3e2a7d008a84bed2e82954b68c0c037cbab27746",
+    "ЛР1/screenshots/result.png": "5eeb4022789022bbb2e33184e8733b2497babf96fca99aa38fe311fa1e69d8d9",
+    "ЛР1/text.docx": "91b66913c386e803375aab442a7da7dc9c6868e92fa8bb84e7fd3e73cad9c915",
+    "ЛР1/Отчет_ЛР1.docx": "5288e0b0ac38523bb63f3ed28379305009164f37a50b5c5e5135670bdac85018",
+    "ЛР1/Отчет_ЛР1.pdf": "771070b76d41fc00c4351798810a0df147499969245acedc684892649891e1c5"
+  }
+}

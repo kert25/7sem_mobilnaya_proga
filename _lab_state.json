@@ -1,0 +1,145 @@
+{
+  "version": 2,
+  "commit_on_completion": false,
+  "project_notes": [
+    "Для ЛР1 используется локальная методичка Kotlin_lab01_0.pdf; пособие Носовой в корне относится к последующим лабораторным работам."
+  ],
+  "labs": {
+    "1": {
+      "status": "ready_for_review",
+      "directory": "ЛР1",
+      "methodical_guide": "ЛР1/Kotlin_lab01_0.pdf",
+      "report_number": 1,
+      "theme": "Базовые операции",
+      "variant": "2",
+      "notes": [
+        "Выбрано действие 2: вычисление суммы элементов, кратных 5."
+      ],
+      "next_step": "Проверить готовую лабораторную и подтвердить результат.",
+      "commands": {
+        "build_text": "py _tools/make_docx.py --out ЛР1/text.docx --num 1 --theme Lab1 --content ЛР1/content_text.json --no-title"
+      },
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-10-03T07:33:01Z",
+        "checks": [
+          "state_validation",
+          "source_result",
+          "report_docx",
+          "report_pdf",
+          "pdf_text",
+          "text_docx",
+          "quality_gate"
+        ],
+        "warnings": [
+          "Kotlin compiler is not installed locally; the deterministic calculation was independently checked, but the source was not executed by kotlinc."
+        ]
+      },
+      "artifacts": [
+        "ЛР1/Kotlin_lab01_0.pdf",
+        "ЛР1/Main.kt",
+        "ЛР1/content.json",
+        "ЛР1/content_text.json",
+        "ЛР1/screenshots/result.png",
+        "ЛР1/Отчет_ЛР1.docx",
+        "ЛР1/Отчет_ЛР1.pdf",
+        "ЛР1/text.docx",
+        "ЛР1/quality_gate.json"
+      ]
+    },
+    "2": {
+      "status": "ready_for_review",
+      "directory": "ЛР2",
+      "methodical_guide": "ЛР2/Kotlin_lab02_0.pdf",
+      "report_number": 2,
+      "theme": "Функции",
+      "variant": "2",
+      "notes": [
+        "Выбран вариант 2: инвертирование регистра букв в строке.",
+        "Пять строк обрабатываются функцией invertCase."
+      ],
+      "next_step": "Проверить готовую лабораторную и подтвердить результат.",
+      "commands": {},
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-10-03T07:48:02Z",
+        "checks": [
+          "state_validation",
+          "case_inversion_examples",
+          "report_docx",
+          "report_pdf",
+          "pdf_text",
+          "text_docx",
+          "quality_gate"
+        ],
+        "warnings": [
+          "Kotlin compiler is not installed locally; the five expected outputs were independently checked, but Main.kt was not compiled by kotlinc."
+        ]
+      },
+      "artifacts": [
+        "ЛР2/Kotlin_lab02_0.pdf",
+        "ЛР2/Main.kt",
+        "ЛР2/content.json",
+        "ЛР2/content_text.json",
+        "ЛР2/screenshots/result.png",
+        "ЛР2/Отчет_ЛР2.docx",
+        "ЛР2/Отчет_ЛР2.pdf",
+        "ЛР2/text.docx",
+        "ЛР2/quality_gate.json"
+      ]
+    },
+    "3": {
+      "status": "ready_for_review",
+      "directory": "ЛР3",
+      "methodical_guide": "ЛР3/Kotlin_lab03_0.pdf",
+      "report_number": 3,
+      "theme": "Классы",
+      "variant": "2",
+      "notes": [
+        "Выбрана предметная область «электроника»: базовый класс ElectronicDevice и дочерние классы Smartphone, Laptop.",
+        "Продемонстрированы свойства с проверкой, конструкторы, наследование, переопределение и полиморфизм."
+      ],
+      "next_step": "Проверить готовую лабораторную и подтвердить результат.",
+      "commands": {
+        "build_text": "PYTHONUTF8=1 py _tools/make_docx.py --out ЛР3/text.docx --num 3 --theme Lab3 --content ЛР3/content_text.json --no-title"
+      },
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-10-03T07:56:27Z",
+        "checks": [
+          "state_validation",
+          "kotlinc_compile_and_run",
+          "report_docx",
+          "report_pdf",
+          "pdf_text",
+          "text_docx",
+          "quality_gate"
+        ],
+        "warnings": []
+      },
+      "artifacts": [
+        "ЛР3/Kotlin_lab03_0.pdf",
+        "ЛР3/Main.kt",
+        "ЛР3/content.json",
+        "ЛР3/content_text.json",
+        "ЛР3/screenshots/result.png",
+        "ЛР3/Отчет_ЛР3.docx",
+        "ЛР3/Отчет_ЛР3.pdf",
+        "ЛР3/text.docx",
+        "ЛР3/quality_gate.json"
+      ]
+    }
+  }
+}
