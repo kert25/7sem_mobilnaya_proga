@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "lab": 4,
+  "report_number": 4,
+  "status": "passed",
+  "checked_at": "2026-10-17T09:07:21Z",
+  "checks": [
+    "content_references",
+    "artifacts",
+    "report_docx",
+    "report_pdf",
+    "text_docx"
+  ],
+  "files": [
+    "ЛР4/Отчет_ЛР4.docx",
+    "ЛР4/Отчет_ЛР4.pdf",
+    "ЛР4/text.docx"
+  ],
+  "sha256": {
+    "_context.json": "18e6f0c6c5780c54a0ffb87ef5dc303125a8e5aea342377c91e8576eb3739142",
+    "ЛР4/app/src/main/java/ru/tulsu/mobileprogramming/businesscard/MainActivity.kt": "960e05786538b9300e6f72894f3ba2df85131c0ab1b9fd865d9966b3874d5bfc",
+    "ЛР4/app/src/main/res/anim/avatar_entrance.xml": "21165e326592514e6737ef02c7e6f9738e7a13bc6540d2e230bba5e4b1bced04",
+    "ЛР4/app/src/main/res/layout/activity_main.xml": "ac458a960e8b5f9b4748246fcb81b866cd54721a8bc5a0948ff6a0f84b16d57e",
+    "ЛР4/BusinessCard-debug.apk": "3933d62616e0f6d9ac85b3317a7691d7bcba09fa5991a3ac8335b1e4b7d77ed4",
+    "ЛР4/content.json": "63560bda60347c25e74a62c3c8b75dc1130e954b1338b131169fe4118bc26b72",
+    "ЛР4/content_text.json": "10b8472815b340b7edca1afd7229eb025c9398bbe5e1842552edefc0d278cdcd",
+    "ЛР4/screenshots/result_full.png": "355bce98c606be021036050d8c22ffff2e6e63765938e5d9b7f056583508d8b1",
+    "ЛР4/text.docx": "c69e5f1080951bc3170100d136aa81a4cebccf128afab621ff60a6234d57a5b6",
+    "ЛР4/Носова_ЛС_Разработка_моб_приложений.pdf": "fa7ba3ce3ebbdc8d72cf33d0ae7f38e62c4a7f5ac12fe3d7227ff178f6e470bc",
+    "ЛР4/Отчет_ЛР4.docx": "aa3040c3d34293d034a14ba71429c58bcf463ea754db2465c70e85e4cd9e41b8",
+    "ЛР4/Отчет_ЛР4.pdf": "f2cb9efb8af01bd3e283f64b308b985fd36cfabc946884564cc8db76ae96e1ef"
+  }
+}

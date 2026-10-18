@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Счётчик касаний</string>
+    <string name="title">Счётчик нажатий</string>
+    <string name="hint_initial">Коснись изображения, чтобы начать подсчёт</string>
+    <string name="hint_after_click">Отлично! Каждое касание изображения учитывается</string>
+    <string name="image_description">Интерактивное изображение руки для подсчёта касаний</string>
+    <string name="footer">Нажимай на изображение ещё раз</string>
+</resources>

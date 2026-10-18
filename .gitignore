@@ -1,0 +1,22 @@
+# Local command-line Android toolchain
+_android-tools/
+
+# Temporary verification logs
+setup-android.log
+setup-android.err.log
+build-lr*.log
+build-lr*.err.log
+emulator.log
+emulator.err.log
+
+# Generated Kotlin/Android build artifacts and IDE settings
+__pycache__/
+_tools/kotlin/
+**/.gradle/
+**/.kotlin/
+**/.idea/
+**/build/
+**/local.properties
+*.jar
+*.idsig
+~$*.docx

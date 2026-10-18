@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Визитка разработчика</string>
+    <string name="developer_name">Лаукерт К.М.</string>
+    <string name="developer_role">Android-разработчик</string>
+    <string name="developer_description">Разрабатываю удобные и понятные мобильные приложения для Android.</string>
+    <string name="contacts_title">Контактная информация</string>
+    <string name="email_label">Email</string>
+    <string name="email_value">laukert.dev@example.com</string>
+    <string name="phone_label">Телефон</string>
+    <string name="phone_value">+7 (999) 123-45-67</string>
+    <string name="telegram_label">Telegram</string>
+    <string name="telegram_value">@laukert_mobile</string>
+    <string name="avatar_description">Фотография разработчика</string>
+</resources>

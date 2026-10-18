@@ -81,4 +81,6 @@ fun main() {
         device.powerOff()
         println()
     }
+
+    println(smartphone)
 }

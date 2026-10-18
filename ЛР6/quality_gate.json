@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "lab": 6,
+  "report_number": 6,
+  "status": "passed",
+  "checked_at": "2026-10-17T08:09:46Z",
+  "checks": [
+    "content_references",
+    "artifacts",
+    "report_docx",
+    "report_pdf",
+    "text_docx"
+  ],
+  "files": [
+    "ЛР6/Отчет_ЛР6.docx",
+    "ЛР6/Отчет_ЛР6.pdf",
+    "ЛР6/text.docx"
+  ],
+  "sha256": {
+    "_context.json": "18e6f0c6c5780c54a0ffb87ef5dc303125a8e5aea342377c91e8576eb3739142",
+    "ЛР6/app/src/main/java/ru/tulsu/mobileprogramming/imagecounter/MainActivity.kt": "99bccc6b2be7a98cc50f87ac868a0762b016568498349dfbf70a5c49ef4014ae",
+    "ЛР6/app/src/main/res/drawable/click_illustration.xml": "58aeaf15f92be5f8925b9520a96b2759ef1387dfad221fc3cf06f5b54423fdec",
+    "ЛР6/app/src/main/res/drawable/image_surface.xml": "97b84148b2f7c5e90082a78d1255cd85948cbe804c9738c2ad6d00a832f21100",
+    "ЛР6/app/src/main/res/layout/activity_main.xml": "4469d24e119c81fcdbc422c67d72390ab69745ff8977796059591a8367470bd7",
+    "ЛР6/content.json": "eeb3d5ac1fe62eca156bcb948064e6418267c0314bc165c8f5269ea7152f683c",
+    "ЛР6/content_text.json": "5f75ef1cb852eca8dfaff7452cb68d43d25c1e3d8c6c04d894208ac786f8f339",
+    "ЛР6/ImageCounter-debug.apk": "737a42bd1a37998161f006b2d1312182c71b274e35bd700b6c8882ff8dbd971a",
+    "ЛР6/screenshots/result.png": "82b0c7bfa6d514b346afe915bc3e90baddc750df990f1e6e7f7261de329ac17c",
+    "ЛР6/text.docx": "14b086a2eb1d2ad94b461121f9927d70ceea9f18b519caf28d59cb6706c2bc49",
+    "ЛР6/Отчет_ЛР6.docx": "201fa3daa7b9386ca6534630428f29e25638b625e6609e9c6967748cb3aaa29a",
+    "ЛР6/Отчет_ЛР6.pdf": "1b0af188146835c92e83f2b27c0e08f24c1a0a8227bf42dbb65c9ddcb6caf7ec"
+  }
+}

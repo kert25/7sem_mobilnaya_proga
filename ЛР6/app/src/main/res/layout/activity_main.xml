@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="28dp"
+    android:paddingVertical="48dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/title"
+        android:textColor="@color/title_text"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/hintText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="@string/hint_initial"
+        android:textColor="@color/secondary_text"
+        android:textSize="17sp" />
+
+    <ImageView
+        android:id="@+id/clickImage"
+        android:layout_width="248dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/image_surface"
+        android:clickable="true"
+        android:contentDescription="@string/image_description"
+        android:focusable="true"
+        android:padding="24dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/click_illustration" />
+
+    <TextView
+        android:id="@+id/counterText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:textColor="@color/counter_text"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:alpha="0.8"
+        android:gravity="center"
+        android:text="@string/footer"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp" />
+</LinearLayout>

@@ -2,7 +2,8 @@
   "version": 2,
   "commit_on_completion": false,
   "project_notes": [
-    "Для ЛР1 используется локальная методичка Kotlin_lab01_0.pdf; пособие Носовой в корне относится к последующим лабораторным работам."
+    "Для ЛР1 используется локальная методичка Kotlin_lab01_0.pdf.",
+    "Пособие Носовой используется начиная с общей ЛР4: номер лабораторной в пособии на три меньше общего номера."
   ],
   "labs": {
     "1": {
@@ -139,6 +140,174 @@
         "ЛР3/Отчет_ЛР3.pdf",
         "ЛР3/text.docx",
         "ЛР3/quality_gate.json"
+      ]
+    },
+    "4": {
+      "status": "completed",
+      "directory": "ЛР4",
+      "methodical_guide": "ЛР4/Носова_ЛС_Разработка_моб_приложений.pdf",
+      "report_number": 4,
+      "theme": "Начало работы с Android Studio. Приложение-визитка",
+      "variant": "2",
+      "notes": [
+        "Используется самостоятельное задание лабораторной работы №1 пособия Л. С. Носовой.",
+        "Нужно создать приложение-визитку с информацией о разработчике, контактами, фото и анимацией фото."
+      ],
+      "next_step": "ЛР4 согласована пользователем; отчёт актуализирован после изменения анимации.",
+      "commands": {},
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-10-17T09:07:34Z",
+        "checks": [
+          "state_validation",
+          "kotlin_compile",
+          "apk_signature_v1_v2_v3",
+          "emulator_install_and_launch",
+          "continuous_avatar_animation",
+          "report_docx",
+          "report_pdf",
+          "text_docx",
+          "quality_gate"
+        ],
+        "warnings": [
+          "Штатная Gradle-сборка недоступна в текущем окружении из-за Java 27; APK собран вручную инструментами Android SDK и проверен на эмуляторе."
+        ]
+      },
+      "artifacts": [
+        "ЛР4/Носова_ЛС_Разработка_моб_приложений.pdf",
+        "ЛР4/app/src/main/java/ru/tulsu/mobileprogramming/businesscard/MainActivity.kt",
+        "ЛР4/app/src/main/res/layout/activity_main.xml",
+        "ЛР4/app/src/main/res/anim/avatar_entrance.xml",
+        "ЛР4/BusinessCard-debug.apk",
+        "ЛР4/content.json",
+        "ЛР4/content_text.json",
+        "ЛР4/Отчет_ЛР4.docx",
+        "ЛР4/Отчет_ЛР4.pdf",
+        "ЛР4/text.docx",
+        "ЛР4/screenshots/result_full.png",
+        "ЛР4/quality_gate.json"
+      ]
+    },
+    "5": {
+      "status": "completed",
+      "directory": "ЛР5",
+      "methodical_guide": "Носова_ЛС_Разработка_моб_приложений.pdf",
+      "report_number": 5,
+      "theme": "Ориентация экрана. Работа с компонентом «Кнопка»",
+      "variant": "самостоятельная работа",
+      "shared_resources": [
+        "Носова_ЛС_Разработка_моб_приложений.pdf"
+      ],
+      "notes": [
+        "Используется самостоятельное задание лабораторной работы №2 пособия Л. С. Носовой.",
+        "Приложение запрашивает имя и настроение пользователя, выводит приветствие и соответствующую иллюстрацию.",
+        "Для портретной и альбомной ориентаций предусмотрены разные XML-разметки."
+      ],
+      "next_step": "ЛР5 согласована пользователем; текст ответа для плохого настроения уточнён.",
+      "commands": {
+        "manual_apk_build": "aapt2 + kotlinc + d8 + apksigner (см. проверку APK)",
+        "emulator_check": "adb install -r ЛР5/MoodDialog-debug.apk"
+      },
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-10-17T09:31:25Z",
+        "checks": [
+          "state_validation",
+          "kotlin_resources_rebuild",
+          "apk_signature_v1_v2_v3",
+          "emulator_install_and_launch",
+          "supportive_bad_mood_text",
+          "report_docx",
+          "report_pdf",
+          "text_docx",
+          "quality_gate"
+        ],
+        "warnings": [
+          "Штатная Gradle-сборка недоступна в текущем окружении из-за Java 27; APK собран вручную инструментами Android SDK и проверен на эмуляторе."
+        ]
+      },
+      "artifacts": [
+        "ЛР5/app/src/main/java/ru/tulsu/mobileprogramming/mooddialog/MainActivity.kt",
+        "ЛР5/app/src/main/res/layout/activity_main.xml",
+        "ЛР5/app/src/main/res/layout-land/activity_main.xml",
+        "ЛР5/app/src/main/res/drawable/mood_happy.xml",
+        "ЛР5/app/src/main/res/drawable/mood_sad.xml",
+        "ЛР5/MoodDialog-debug.apk",
+        "ЛР5/content.json",
+        "ЛР5/content_text.json",
+        "ЛР5/screenshots/result_landscape.png",
+        "ЛР5/screenshots/result_portrait.png",
+        "ЛР5/screenshots/result_sad.png",
+        "ЛР5/Отчет_ЛР5.docx",
+        "ЛР5/Отчет_ЛР5.pdf",
+        "ЛР5/text.docx",
+        "ЛР5/quality_gate.json"
+      ]
+    },
+    "6": {
+      "status": "ready_for_review",
+      "directory": "ЛР6",
+      "methodical_guide": "Носова_ЛС_Разработка_моб_приложений.pdf",
+      "report_number": 6,
+      "theme": "Подсчет количества нажатий по компоненту «Кнопка»",
+      "variant": "самостоятельная работа",
+      "shared_resources": [
+        "Носова_ЛС_Разработка_моб_приложений.pdf"
+      ],
+      "notes": [
+        "Используется самостоятельное задание лабораторной работы №3 пособия Л. С. Носовой.",
+        "Приложение считает нажатия на изображение, изменяет фон и параметры текста."
+      ],
+      "next_step": "Проверить готовую ЛР6 и подтвердить результат.",
+      "commands": {
+        "manual_apk_build": "aapt2 + kotlinc + d8 + apksigner (см. проверку APK)",
+        "emulator_check": "adb install -r ЛР6/ImageCounter-debug.apk"
+      },
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-10-17T08:09:56Z",
+        "checks": [
+          "state_validation",
+          "xml_resources_parse",
+          "kotlin_compile",
+          "apk_signature_v1_v2_v3",
+          "emulator_install_and_launch",
+          "five_image_clicks",
+          "counter_state_persistence",
+          "report_docx",
+          "report_pdf",
+          "text_docx",
+          "quality_gate"
+        ],
+        "warnings": [
+          "Штатная Gradle-сборка недоступна в текущем окружении из-за Java 27; APK собран вручную инструментами Android SDK и проверен на эмуляторе."
+        ]
+      },
+      "artifacts": [
+        "ЛР6/app/src/main/java/ru/tulsu/mobileprogramming/imagecounter/MainActivity.kt",
+        "ЛР6/app/src/main/res/layout/activity_main.xml",
+        "ЛР6/app/src/main/res/drawable/click_illustration.xml",
+        "ЛР6/app/src/main/res/drawable/image_surface.xml",
+        "ЛР6/ImageCounter-debug.apk",
+        "ЛР6/content.json",
+        "ЛР6/content_text.json",
+        "ЛР6/screenshots/result.png",
+        "ЛР6/Отчет_ЛР6.docx",
+        "ЛР6/Отчет_ЛР6.pdf",
+        "ЛР6/text.docx",
+        "ЛР6/quality_gate.json"
       ]
     }
   }

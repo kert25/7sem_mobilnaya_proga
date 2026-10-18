@@ -106,7 +106,8 @@ def title_page(num, theme, ctx):
     done_left = ctx.get("performed_prefix", "Выполнил: ст. гр.  ") + ctx["group"]
     done_pad = max(1, 80 - len(done_left))
     took_left = ctx.get("accepted_prefix", "Принял: ") + ctx["teacher_title"]
-    took_pad = max(1, 72 - len(took_left))
+    took_width = ctx.get("accepted_width", 72)
+    took_pad = max(1, took_width - len(took_left))
     p = []
     for line in ctx["university"]:                                   # шапка вуза
         p.append(para(run(line), jc="center"))
@@ -126,7 +127,7 @@ def title_page(num, theme, ctx):
                    run("%s " % ctx["student"]), run(" ")], jc="both"))
     p.append(para(run(""), jc="both"))                                          # P20
     p.append(para([run(took_left + " " * took_pad),                             # P21
-                   run("%s " % ctx["teacher"]), run(" ")], jc="both"))
+                   run(ctx["teacher"].replace(" ", " ") + " "), run(" ")], jc="both"))
     for _ in range(6):                                                # P22-P27
         p.append(para(run(""), jc="both"))
     p.append(para(run("%s %s" % (ctx["city"], ctx["year"])), jc="center"))       # P28
@@ -151,9 +152,11 @@ def image_xml(png_path, rid, img_id):
         data = f.read()
     wpx, hpx = struct.unpack(">II", data[16:24])
     maxw = int(16.5 / 2.54 * 96)  # ~16,5 см полезной ширины страницы
-    if wpx > maxw:
-        hpx = int(hpx * maxw / wpx)
-        wpx = maxw
+    maxh = int(12.5 / 2.54 * 96)  # ~12,5 см: результат и подпись помещаются на одной странице
+    scale = min(1, maxw / wpx, maxh / hpx)
+    if scale < 1:
+        wpx = int(wpx * scale)
+        hpx = int(hpx * scale)
     emu_w, emu_h = wpx * 9525, hpx * 9525
     drawing = (
         '<w:r><w:drawing><wp:inline xmlns:wp="%(wp)s" distT="0" distB="0" distL="0" distR="0">'

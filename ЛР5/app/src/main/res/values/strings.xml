@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Диалог настроения</string>
+    <string name="title">Давай познакомимся</string>
+    <string name="subtitle">Ответь на два вопроса, и я поддержу разговор</string>
+    <string name="name_hint">Как тебя зовут?</string>
+    <string name="mood_question">Какое у тебя настроение?</string>
+    <string name="good_mood_choice">Хорошее</string>
+    <string name="bad_mood_choice">Не очень</string>
+    <string name="greet_action">Продолжить разговор</string>
+    <string name="initial_prompt">Введи имя и выбери настроение</string>
+    <string name="enter_name_prompt">Сначала напиши своё имя</string>
+    <string name="name_required">Укажи имя</string>
+    <string name="mood_good">хорошее</string>
+    <string name="mood_bad">не очень хорошее</string>
+    <string name="greeting_template">%1$s, спасибо за ответ. Твоё настроение: %2$s.</string>
+    <string name="mood_image_description">Иллюстрация выбранного настроения</string>
+</resources>

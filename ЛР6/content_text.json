@@ -1,0 +1,38 @@
+[
+  {
+    "h": "ЛР6 — кратко"
+  },
+  {
+    "p": "Приложение «Счётчик касаний» учитывает нажатия на ImageView. При каждом касании увеличивается clickCount, обновляется TextView и запускается короткая scale-анимация изображения."
+  },
+  {
+    "h": "Что показать преподавателю"
+  },
+  {
+    "p": "1. Открыть ЛР6/app/src/main/java/ru/tulsu/mobileprogramming/imagecounter/MainActivity.kt. Показать setOnClickListener у clickImage, метод showCount и анимацию animateClick."
+  },
+  {
+    "p": "2. Открыть ЛР6/app/src/main/res/layout/activity_main.xml. Показать ImageView с id clickImage, новый фон и изменённые параметры текста: textSize, textStyle и textColor."
+  },
+  {
+    "p": "3. Открыть ЛР6/app/src/main/res/drawable/click_illustration.xml. Это загруженное в ImageView векторное изображение."
+  },
+  {
+    "p": "4. Установить ЛР6/ImageCounter-debug.apk, нажать на изображение несколько раз. Показать увеличение числа и сохранение результата после поворота экрана."
+  },
+  {
+    "h": "Вопросы и ответы"
+  },
+  {
+    "p": "Вопрос: как назначается обработчик нажатия? Ответ: методом setOnClickListener { ... }. Лямбда вызывается Android при касании кликабельного View."
+  },
+  {
+    "p": "Вопрос: почему изображение можно нажимать? Ответ: у ImageView заданы android:clickable=\"true\" и android:focusable=\"true\", после чего для него назначен обработчик события."
+  },
+  {
+    "p": "Вопрос: зачем использовать plurals? Ответ: ресурс plurals выбирает корректную форму слова для количества: «Нажатие: 1», «Нажатия: 2», «Нажатий: 5»."
+  },
+  {
+    "p": "Вопрос: зачем сохранять clickCount? Ответ: при повороте Activity обычно пересоздаётся. onSaveInstanceState помещает значение в Bundle, чтобы восстановить его в onCreate."
+  }
+]

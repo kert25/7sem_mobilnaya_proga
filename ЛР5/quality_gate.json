@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "lab": 5,
+  "report_number": 5,
+  "status": "passed",
+  "checked_at": "2026-10-17T09:31:08Z",
+  "checks": [
+    "content_references",
+    "artifacts",
+    "report_docx",
+    "report_pdf",
+    "text_docx"
+  ],
+  "files": [
+    "ЛР5/Отчет_ЛР5.docx",
+    "ЛР5/Отчет_ЛР5.pdf",
+    "ЛР5/text.docx"
+  ],
+  "sha256": {
+    "_context.json": "18e6f0c6c5780c54a0ffb87ef5dc303125a8e5aea342377c91e8576eb3739142",
+    "ЛР5/app/src/main/java/ru/tulsu/mobileprogramming/mooddialog/MainActivity.kt": "e308904af6d8d9c5fe4330b75c0e91bda4d2ce576a37756e7e5f423234a21a51",
+    "ЛР5/app/src/main/res/drawable/mood_happy.xml": "02a742ef1eeedadb26111e541a5ab3020801dddfeb29bceb084c73f08e799a43",
+    "ЛР5/app/src/main/res/drawable/mood_sad.xml": "fa5dec64d9eb667c8883ad1e6e4b6840915a51b7f10e3aec035fbeb57bb9b1fd",
+    "ЛР5/app/src/main/res/layout/activity_main.xml": "135ef8f202095cc3cf6bf2d249e623399732d0af3e1a3068f3082d5b798ea840",
+    "ЛР5/app/src/main/res/layout-land/activity_main.xml": "e2e4c43134726d917f6a53408f1bb3afe0c334d0c98f78916c343413dfe7f8e1",
+    "ЛР5/content.json": "9f70949e340048861580a6152f164ee997e39d63e1001ac5c8df08928d8726ce",
+    "ЛР5/content_text.json": "181166954760fc2e8b1c9f940c6b55982b1078ae2651bb4a409b75d9f5aed7a5",
+    "ЛР5/MoodDialog-debug.apk": "7e803bb5be0bdce4b3030e4ecfa38fe160dd0f1dab2d42d83c328066b722f945",
+    "ЛР5/screenshots/result_landscape.png": "2553930daf4ece1db037a83583d6b70cd2d4198c85059ab57ea957df8a8172ce",
+    "ЛР5/screenshots/result_portrait.png": "e5baf1d074afe2527786b408cae51815b774c1441e8b78fad4d0f073065572b5",
+    "ЛР5/screenshots/result_sad.png": "f570ef50b695818beb971ef935a5409007df9f465659b23a15d5f1140fe27cd5",
+    "ЛР5/text.docx": "6595c223af7f50ba6d3b166014981e82f608a44d077fb568e1a43fcabf2246a7",
+    "ЛР5/Отчет_ЛР5.docx": "b4153869fc006762304bb13ec6323dd7c367988b01a306ebaad07a4d97bbddaf",
+    "ЛР5/Отчет_ЛР5.pdf": "e787571eef6d3aa756507802ec663af95a441016eaf0218ba369c868afcc4d26"
+  }
+}
