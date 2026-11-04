@@ -18,5 +18,7 @@ _tools/kotlin/
 **/build/
 **/local.properties
 *.jar
+# The Gradle wrapper jar must be committed: a clone without it cannot build.
+!**/gradle/wrapper/gradle-wrapper.jar
 *.idsig
 ~$*.docx

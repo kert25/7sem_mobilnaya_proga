@@ -22,6 +22,24 @@ adb devices
 
 Если команда выводит заголовок `List of devices attached`, ADB работает. Устройство появится после запуска эмулятора.
 
+## Если всё-таки открываешь Android Studio
+
+Проект рассчитан на Gradle 8.10.2 и AGP 8.8.2. Android Studio 2026.1.4 запускает Gradle на своей встроенной Java 25, а Gradle 8.10.2 поддерживает Java только до 23. Поэтому синхронизация падает с ошибкой «Incompatible Gradle JVM version». Лечится без интернета:
+
+1. `File → Settings → Build, Execution, Deployment → Build Tools → Gradle`.
+2. В поле **Gradle JDK** нажмите `Add JDK…` и укажите папку `<корень проекта>\_android-tools\jdk-17` (ту, где лежит `bin`).
+3. Выполните `Sync Project with Gradle Files`.
+
+Важно: открывайте в Android Studio папку конкретной работы (`ЛР4`, `ЛР5`, `ЛР6`), а не корень `ЛР_Мобильное_программирование` — в корне нет `settings.gradle.kts`, и Android Studio покажет пустой проект без конфигураций запуска.
+
+Не нажимайте «Upgrade Gradle wrapper»: Java 25 поддерживается только с Gradle 9.1, а он несовместим с AGP 8.8.2; офлайн апгрейд всё равно не скачается.
+
+### Офлайн
+
+Дистрибутив Gradle 8.10.2 и зависимости уже лежат в `~/.gradle` после первой успешной сборки. На машине без интернета сборка работает, пока этот кэш и `_android-tools` на месте. Если кэша нет, `setup-android.ps1` и Gradle wrapper попытаются скачать JDK и Gradle и без сети упадут.
+
+Путь к папке содержит кириллицу, поэтому в `gradle.properties` стоит `android.overridePathCheck=true` (experimental). Не переименовывайте промежуточные папки; для переноса на другую машину лучше выбрать путь без кириллицы, например `C:\dev\mobile-labs`.
+
 ## Как запустить эмулятор перед показом лабораторной
 
 ### 1. Откройте терминал в корне проекта
@@ -60,6 +78,14 @@ emulator-5554    device
 Важно: статус должен быть именно `device`, а не `offline` или `unauthorized`.
 
 ## Как собрать, установить и запустить лабораторную
+
+То же самое можно сделать из корня проекта одной командой, без перехода в папку:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run-android.ps1 -Lab 4   # или -Lab 5, -Lab 6
+```
+
+Дальше — то же в виде `run.ps1` внутри папки лабораторной.
 
 ### ЛР4
 
@@ -197,6 +223,34 @@ powershell -ExecutionPolicy Bypass -File .\start-emulator.ps1
 ```
 
 Дождитесь рабочего стола Android и строки `emulator-5554    device` в `adb devices`. После этого повторите запуск лабораторной.
+
+### 4. Если установка падает с `INSTALL_FAILED_VERIFICATION_FAILURE: Integrity verification timed out`
+
+Так ведёт себя проверка приложений Google Play в образе эмулятора. Отключите её один раз:
+
+```powershell
+adb shell settings put global verifier_verify_adb_installs 0
+adb shell settings put global package_verifier_enable 0
+```
+
+и повторите запуск лабораторной. Настройка сохраняется в образе эмулятора, поэтому после перезапуска AVD повторять её не нужно.
+
+### 5. Если после перезапуска эмулятор долго висит на заставке
+
+Признак: `adb devices` показывает `device`, но `adb shell getprop sys.boot_completed` пуст, установка падает с `NullPointerException ... StorageManagerService`, а `adb shell pm list packages` отвечает `Can't find service: package`. Дождитесь окончания загрузки (первый старт после сброса данных занимает несколько минут), при необходимости перезапустите AVD:
+
+```powershell
+adb emu kill
+powershell -ExecutionPolicy Bypass -File .\start-emulator.ps1
+```
+
+Если после перезапуска зависание повторяется, верните образ к заводскому состоянию: удалите в папке `%USERPROFILE%\.android\avd\LR6_Pixel_6.avd` файлы `*.qcow2` и каталог `snapshots`, затем запустите эмулятор напрямую с отключёнными снимками состояния:
+
+```powershell
+& "$env:LOCALAPPDATA\Android\Sdk\emulator\emulator.exe" -avd LR6_Pixel_6 -no-snapshot-load -no-snapshot-save
+```
+
+При этом удаляются установленные приложения — APK придётся поставить заново через `run.ps1`. Данные проекта на диске не затрагиваются.
 
 ## Кратко: что делать на защите
 

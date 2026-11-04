@@ -12,4 +12,7 @@
     <string name="telegram_label">Telegram</string>
     <string name="telegram_value">@laukert_mobile</string>
     <string name="avatar_description">Фотография разработчика</string>
+    <string name="current_time_title">Текущее время</string>
+    <string name="time_placeholder">--:--:--</string>
+    <string name="show_time_button">Показать время</string>
 </resources>
