@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Палитра фона из лабораторной работы: красный, жёлтый, зелёный. -->
+    <color name="redColor">#D32F2F</color>
+    <color name="yellowColor">#F2B705</color>
+    <color name="greenColor">#2E7D32</color>
+
+    <color name="panel">#FFFFFF</color>
+    <color name="ink">#1F1633</color>
+    <color name="accent">#5B45D6</color>
+    <color name="muted">#5F5A72</color>
+    <color name="button_fill">#F3EFFF</color>
+    <color name="button_stroke">#CFC3F5</color>
+    <color name="icon_background">#5B45D6</color>
+</resources>

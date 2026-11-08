@@ -35,10 +35,10 @@ listOf("1", "2", "3").forEach { number ->
     }
 }
 
-// ЛР4–ЛР6 — Android-приложения. Модуль :lrN:app указывает прямо на папку app
+// ЛР4–ЛР7 — Android-приложения. Модуль :lrN:app указывает прямо на папку app
 // внутри папки лабораторной, поэтому исходники, ресурсы и отчёты остаются
 // на своих местах.
-mapOf("4" to "ЛР4", "5" to "ЛР5", "6" to "ЛР6").forEach { (number, labDir) ->
+mapOf("4" to "ЛР4", "5" to "ЛР5", "6" to "ЛР6", "7" to "ЛР7").forEach { (number, labDir) ->
     include(":lr$number")
     project(":lr$number").projectDir = file(labDir)
     include(":lr$number:app")

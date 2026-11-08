@@ -1,0 +1,40 @@
+{
+  "schema_version": 3,
+  "lab": 7,
+  "report_number": 7,
+  "status": "passed",
+  "checked_at": "2026-11-08T13:32:49Z",
+  "checks": [
+    "content_references",
+    "artifacts",
+    "report_docx",
+    "report_pdf",
+    "text_docx",
+    "report_structure",
+    "execution_evidence"
+  ],
+  "warnings": [],
+  "files": [
+    "ЛР7/Отчет_ЛР7.docx",
+    "ЛР7/Отчет_ЛР7.pdf",
+    "ЛР7/text.docx"
+  ],
+  "sha256": {
+    "_context.json": "18e6f0c6c5780c54a0ffb87ef5dc303125a8e5aea342377c91e8576eb3739142",
+    "ЛР7/app/src/main/java/ru/tulsu/mobileprogramming/fontsize/MainActivity.kt": "e14825e6da7acabe7590e10d87d8c34e604289cad8de4391832581052f0de01c",
+    "ЛР7/app/src/main/res/drawable/ic_launcher_foreground.xml": "c5f44fbb579112464d2043f5e48ece532bf49ff31da53343452a204dd0205895",
+    "ЛР7/app/src/main/res/layout/activity_main.xml": "146b39a3c746e3746ac5411c3c32a515de3c8033cb1163ebde4544ae615a0766",
+    "ЛР7/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "b14d1d36a5f3cb40921143c47db1a5cdcb624ae5d4e8ff40753e614bead1c7e8",
+    "ЛР7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png": "78735502e007ada2557c827ab069ecc46119dac6857a7a7c359156f3e68e9c35",
+    "ЛР7/app/src/main/res/values/colors.xml": "969a1edc24b976cb6bff606f072c0fe3b6011bee108cdb34ba58f99727ff71ef",
+    "ЛР7/content.json": "1cbd98f69f5fa993e3297ccf388b34f52fd9a2e352f5a6ac204e6277947d468c",
+    "ЛР7/content_text.json": "53e597b74d720492d30455114cb15b23ea12ca8b59d688ca51ccf397d377a2bd",
+    "ЛР7/FontSize-debug.apk": "81acdefea7d710546c534a68427d600fdbc7a9ef804808b56242819aa1cececb",
+    "ЛР7/screenshots/result_home.png": "1664284a874021247a6f582a8d666cf3c4e72d238a5ddf49f314ec2b79bc7561",
+    "ЛР7/screenshots/result_icon_info.png": "bae325fc97c8c5091a31ca50ecd2d025396d27fc26e977ec280ec7a4de4de34d",
+    "ЛР7/screenshots/result_main.png": "f7a3f0909b0923a3ee8efc28437d06df203684af34010c856e2a0ff693cf1106",
+    "ЛР7/text.docx": "b4e40f97130397361571a5dbb24ccc1e139a324e3493962bad5b8283ea010a8c",
+    "ЛР7/Отчет_ЛР7.docx": "621890d1f7a3c018de5bafae04568abb0aec97e8161072f7077b5d32657772e2",
+    "ЛР7/Отчет_ЛР7.pdf": "219b715ca5c42b2a34ad340a8fa31da53abf2df5e704229d2559ccd49b34daff"
+  }
+}

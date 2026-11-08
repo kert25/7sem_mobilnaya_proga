@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Размер шрифта</string>
+    <string name="title">Размер шрифта</string>
+    <string name="subtitle">Меняйте размер надписи кнопками, а фон — палитрой</string>
+    <string name="sample_text">Мобильное приложение</string>
+    <string name="size_value">Текущий размер: %1$d sp</string>
+    <string name="button_smaller">Мельче</string>
+    <string name="button_larger">Крупнее</string>
+    <string name="button_reset">Сброс</string>
+    <string name="background_label">Цвет фона</string>
+    <string name="color_red">Красный фон</string>
+    <string name="color_yellow">Жёлтый фон</string>
+    <string name="color_green">Зелёный фон</string>
+    <string name="footer">Диапазон размера: от 16 до 44 sp</string>
+</resources>

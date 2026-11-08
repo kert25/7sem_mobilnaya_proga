@@ -3,7 +3,8 @@
   "commit_on_completion": false,
   "project_notes": [
     "Для ЛР1 используется локальная методичка Kotlin_lab01_0.pdf.",
-    "Пособие Носовой используется начиная с общей ЛР4: номер лабораторной в пособии на три меньше общего номера."
+    "Пособие Носовой используется начиная с общей ЛР4: номер лабораторной в пособии на три меньше общего номера.",
+    "Сборка ЛР4, ЛР5, ЛР6 идёт штатным Gradle через run.ps1: скрипт подставляет локальную JDK 17 из _android-tools, поэтому системная Java 27 сборке не мешает."
   ],
   "labs": {
     "1": {
@@ -154,7 +155,10 @@
         "Нужно создать приложение-визитку с информацией о разработчике, контактами, фото и анимацией фото."
       ],
       "next_step": "ЛР4 согласована пользователем; отчёт актуализирован после изменения анимации.",
-      "commands": {},
+      "commands": {
+        "start_emulator": "powershell -ExecutionPolicy Bypass -File .\\start-emulator.ps1",
+        "build_install_run": "powershell -ExecutionPolicy Bypass -File .\\run-android.ps1 -Lab 4"
+      },
       "tooling": {
         "report_inspector": "bundled:inspect_docx",
         "pdf_text": "bundled:pdf_text"
@@ -210,7 +214,9 @@
       "next_step": "ЛР5 согласована пользователем; текст ответа для плохого настроения уточнён.",
       "commands": {
         "manual_apk_build": "aapt2 + kotlinc + d8 + apksigner (см. проверку APK)",
-        "emulator_check": "adb install -r ЛР5/MoodDialog-debug.apk"
+        "emulator_check": "adb install -r ЛР5/MoodDialog-debug.apk",
+        "start_emulator": "powershell -ExecutionPolicy Bypass -File .\\start-emulator.ps1",
+        "build_install_run": "powershell -ExecutionPolicy Bypass -File .\\run-android.ps1 -Lab 5"
       },
       "tooling": {
         "report_inspector": "bundled:inspect_docx",
@@ -269,7 +275,9 @@
       "next_step": "Проверить готовую ЛР6 и подтвердить результат.",
       "commands": {
         "manual_apk_build": "aapt2 + kotlinc + d8 + apksigner (см. проверку APK)",
-        "emulator_check": "adb install -r ЛР6/ImageCounter-debug.apk"
+        "emulator_check": "adb install -r ЛР6/ImageCounter-debug.apk",
+        "start_emulator": "powershell -ExecutionPolicy Bypass -File .\\start-emulator.ps1",
+        "build_install_run": "powershell -ExecutionPolicy Bypass -File .\\run-android.ps1 -Lab 6"
       },
       "tooling": {
         "report_inspector": "bundled:inspect_docx",
@@ -309,6 +317,71 @@
         "ЛР6/text.docx",
         "ЛР6/quality_gate.json"
       ]
+    },
+    "7": {
+      "status": "ready_for_review",
+      "directory": "ЛР7",
+      "methodical_guide": "Носова_ЛС_Разработка_моб_приложений.pdf",
+      "report_number": 7,
+      "theme": "Работа с цветом. Изменение размера шрифта",
+      "variant": "самостоятельная работа",
+      "shared_resources": [
+        "Носова_ЛС_Разработка_моб_приложений.pdf"
+      ],
+      "notes": [
+        "Используется самостоятельное задание лабораторной работы №4 пособия Л. С. Носовой.",
+        "Приложение «Размер шрифта» меняет размер надписи кнопками от 16 до 44 sp с шагом 4 sp; кнопки палитры перекрашивают фон.",
+        "Создана собственная иконка: векторный передний план, адаптивный значок mipmap-anydpi-v26 и растровые PNG для старых версий; проверена на домашнем экране эмулятора.",
+        "Вместо ConstraintLayout из методички использован LinearLayout: дополнительная библиотека androidx.constraintlayout не нужна, идентификатор root_layout сохранён."
+      ],
+      "next_step": "Проверить готовую ЛР7 и подтвердить результат.",
+      "commands": {
+        "start_emulator": "powershell -ExecutionPolicy Bypass -File .\\start-emulator.ps1",
+        "build_install_run": "powershell -ExecutionPolicy Bypass -File .\\run-android.ps1 -Lab 7"
+      },
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "artifacts": [
+        "ЛР7/app/src/main/java/ru/tulsu/mobileprogramming/fontsize/MainActivity.kt",
+        "ЛР7/app/src/main/res/layout/activity_main.xml",
+        "ЛР7/app/src/main/res/values/colors.xml",
+        "ЛР7/app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "ЛР7/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "ЛР7/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "ЛР7/FontSize-debug.apk",
+        "ЛР7/content.json",
+        "ЛР7/content_text.json",
+        "ЛР7/screenshots/result_main.png",
+        "ЛР7/screenshots/result_home.png",
+        "ЛР7/screenshots/result_icon_info.png",
+        "ЛР7/Отчет_ЛР7.docx",
+        "ЛР7/Отчет_ЛР7.pdf",
+        "ЛР7/text.docx",
+        "ЛР7/quality_gate.json"
+      ],
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-11-08T13:32:49Z",
+        "checks": [
+          "content_references",
+          "artifacts",
+          "report_docx",
+          "report_pdf",
+          "text_docx",
+          "report_structure",
+          "execution_evidence",
+          "gradle_assemble_debug",
+          "apk_signature_debug",
+          "emulator_install_and_launch",
+          "font_size_16_36_44",
+          "background_palette_applied",
+          "state_survives_rotation",
+          "launcher_icon_on_home"
+        ],
+        "warnings": []
+      }
     }
   }
 }
