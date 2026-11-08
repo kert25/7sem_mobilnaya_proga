@@ -1,0 +1,46 @@
+{
+  "schema_version": 3,
+  "lab": 8,
+  "report_number": 8,
+  "status": "passed",
+  "checked_at": "2026-11-08T14:18:05Z",
+  "checks": [
+    "content_references",
+    "artifacts",
+    "report_docx",
+    "report_pdf",
+    "text_docx",
+    "report_structure",
+    "execution_evidence"
+  ],
+  "warnings": [],
+  "files": [
+    "ЛР8/Отчет_ЛР8.docx",
+    "ЛР8/Отчет_ЛР8.pdf",
+    "ЛР8/text.docx"
+  ],
+  "sha256": {
+    "_context.json": "18e6f0c6c5780c54a0ffb87ef5dc303125a8e5aea342377c91e8576eb3739142",
+    "ЛР8/app/src/main/AndroidManifest.xml": "c1b4b160569bf7f193c13f24d119a57c362743e99af2a7957e3abe88828d1925",
+    "ЛР8/app/src/main/java/ru/tulsu/mobileprogramming/guessnumber/GuessActivity.kt": "82fa20f41b00ce76678c6484b73d784bca03c0701be1a819aba94fb6fdb9ee9b",
+    "ЛР8/app/src/main/java/ru/tulsu/mobileprogramming/guessnumber/MainActivity.kt": "2c6e14298bfed891dbb2095ee4f55add4dfee09f3168cb909d14e532524a736b",
+    "ЛР8/app/src/main/res/layout/activity_guess.xml": "fb791db9f00363f575466d1d499932961c5b2905e38093a5ec28335d6719cfa6",
+    "ЛР8/app/src/main/res/layout/activity_main.xml": "5e81da538dae61beed353863a494ead08ccf8186ae37abf74e9f25d73d87f0a6",
+    "ЛР8/app/src/main/res/values/colors.xml": "f4d88c8579881183d7470526ebadf203bb6b86cb4fb7cb03cd457647a58437fb",
+    "ЛР8/app/src/main/res/values/strings.xml": "1c0df2a528c8a9c04f64e97d259ee033c9cc1f1e7a1e21b80005248c9452401c",
+    "ЛР8/content.json": "830cdf2ee8ecb78c3d7948e11ad5aa3ea36882bc4b1b7ff0743957db81dfcfe5",
+    "ЛР8/content_text.json": "eeef87b32baaa40e3e792417dbf3898d59a00666d8a43361a75b0fc52b3ebaab",
+    "ЛР8/GuessNumber-debug.apk": "5a0d95f0ff262eeed07a8aca2359ef5a824c50d3576aa69183ed573960e4c529",
+    "ЛР8/screenshots/result_computer_guess.png": "11db57e5085b28a5dd420d9801c6d3a41a38f2d0d42177bd9d9941fb4fe0a164",
+    "ЛР8/screenshots/result_computer_won.png": "2aa3d767bb9782dbf82fb9775cd48fccf56df860d29cc75b7088352bb6e4a685",
+    "ЛР8/screenshots/result_guess_hint.png": "6fbc510a172e0da6498b0f17bfd5cd07a9da1e1b0ca4e5165c7b83146696cdd2",
+    "ЛР8/screenshots/result_guess_screen.png": "bc8f46eef2a77c10efcc872b09cd82f34c864719d2d7ed4e2ac27b0177c15852",
+    "ЛР8/screenshots/result_guess_won.png": "b62c7ce04bac957fa2d9668ab2540fa912050f00c12db778db9c13f66f2958a3",
+    "ЛР8/screenshots/result_main.png": "1c885da7bf23fcfa751c7625d70e3153cf6ea8d3102fa2713317ed5f2423ffee",
+    "ЛР8/screenshots/result_rotation.png": "4e5eb6dd7e33360dd2c6f15591bd59dd31c0b33bccd274a9cb5c1963a32dcc17",
+    "ЛР8/screenshots/result_second_summary.png": "7417edd560e10004e61f2920faececf9494c4096f6e032a8a97e65ea58cbce27",
+    "ЛР8/text.docx": "b80c7961cdb440aad8d8c80a592aa931139403457370ce79e5029d11277f2233",
+    "ЛР8/Отчет_ЛР8.docx": "85abe46af7b5528be2eefc22cada478ddb8b56a134de33ac33e7d4c3957b4b5d",
+    "ЛР8/Отчет_ЛР8.pdf": "86776b78bba684c63928fa1731d70bd9b2ed678d4c33c1f06b2153a027ba9c96"
+  }
+}

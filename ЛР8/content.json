@@ -1,0 +1,166 @@
+[
+  {
+    "h": "Цель работы"
+  },
+  {
+    "p": "Изучить особенности работы с Activity в среде разработки Android Studio: создание второго экрана, переход между экранами с помощью объекта Intent, передача данных в другое Activity и возврат результата на исходный экран."
+  },
+  {
+    "h": "Задание"
+  },
+  {
+    "p": "Разработать приложение, которое на первом Activity угадывает загаданное пользователем число из указанного диапазона, а на втором Activity предлагает пользователю угадать случайное число из того же диапазона."
+  },
+  {
+    "h": "Ход выполнения"
+  },
+  {
+    "p": "Создано приложение «Угадай число» на основе шаблона Empty Activity. В проекте два Activity: MainActivity — компьютер угадывает число, задуманное пользователем, и GuessActivity — пользователь угадывает случайное число. Оба экрана объявлены в файле AndroidManifest.xml. У MainActivity есть intent-filter с действиями MAIN и LAUNCHER, поэтому она запускается при старте приложения; GuessActivity объявлена с атрибутом android:exported=\"false\", так как открывается только изнутри приложения."
+  },
+  {
+    "p": "Все надписи вынесены в строковые ресурсы res/values/strings.xml, цвета — в res/values/colors.xml. Для второго экрана создан новый цветовой ресурс guess_background (тёмно-синий фон) и собственная тема Theme.GuessNumber.Second, назначенная GuessActivity в манифесте: она задаёт тёмный фон окна, светлые значки строки состояния и свой акцентный цвет. Разметка обоих экранов построена на LinearLayout внутри ScrollView, поэтому содержимое доступно и на небольшом экране."
+  },
+  {
+    "p": "На первом экране пользователь вводит границы диапазона в поля minInput и maxInput (по умолчанию 1 и 100) и нажимает кнопку «Загадать число». Метод readRange проверяет, что оба поля заполнены целыми числами, верхняя граница больше нижней, а размер диапазона не превышает 10 000 чисел; при ошибке под полями появляется сообщение rangeError. После проверки компьютер делает первую догадку в середине диапазона и показывает панель guessPanel с номером попытки и вопросом «Вы загадали число 50?»."
+  },
+  {
+    "p": "Кнопки «Меньше» и «Больше» сужают диапазон поиска вдвое: при ответе «Больше» нижняя граница становится равной догадке плюс один, при ответе «Меньше» верхняя граница становится равной догадке минус один, после чего вычисляется новая середина. Кнопка «Угадал!» фиксирует результат. Счётчик показывает «Попытка N из M», где M вычисляется функцией maxAttempts как число делений диапазона пополам: для ста чисел это семь попыток. Если ответы пользователя противоречат друг другу и границы диапазона пересекаются, игра завершается сообщением о том, что такого числа в диапазоне нет. После завершения игры появляется итог и кнопка «Ещё раз», возвращающая экран в исходное состояние."
+  },
+  {
+    "p": "Второй экран получает границы диапазона из Intent и загадывает случайное число методом Random.nextInt(min, max + 1). Пользователь вводит вариант в поле guessInput и нажимает «Проверить»; после каждой попытки выводятся подсказка «Загаданное число больше» или «Загаданное число меньше» и сузившийся диапазон в строке rangeView, а в строке attemptView увеличивается номер попытки. Вариант вне оставшегося диапазона не засчитывается как попытка. Кнопка «Сдаться» завершает игру и показывает загаданное число, а кнопка «Новая игра» появляется после победы или поражения и загадывает новое число."
+  },
+  {
+    "p": "Переход на второй экран выполняется по кнопке «Теперь я угадаю»: метод openGuessActivity создаёт объект Intent с указанием класса GuessActivity и кладёт в него границы диапазона, после чего вызывает startActivityForResult. Результат возвращается методом setResult: второй экран передаёт загаданное число, количество попыток и признак победы, а MainActivity в onActivityResult формирует строку итога и показывает её в карточке второго экрана. Ключи, которыми обмениваются экраны, приведены в таблице 1."
+  },
+  {
+    "table": {
+      "rows": [
+        [
+          "Ключ",
+          "Тип",
+          "Назначение"
+        ],
+        [
+          "EXTRA_MIN, EXTRA_MAX",
+          "int",
+          "границы диапазона, передаются на второй экран"
+        ],
+        [
+          "EXTRA_TARGET",
+          "int",
+          "загаданное случайное число, возвращается на первый экран"
+        ],
+        [
+          "EXTRA_ATTEMPTS",
+          "int",
+          "количество попыток пользователя"
+        ],
+        [
+          "EXTRA_WON",
+          "boolean",
+          "признак победы: угадал или сдался"
+        ]
+      ],
+      "widths": [
+        2600,
+        1200,
+        5555
+      ],
+      "header": true
+    }
+  },
+  {
+    "p": "Оба Activity сохраняют своё состояние в onSaveInstanceState и восстанавливают его в onCreate: на первом экране сохраняются границы диапазона, текущая догадка, номер попытки и тексты результатов, на втором — загаданное число, границы поиска и последняя подсказка. Благодаря этому поворот экрана не сбрасывает игру."
+  },
+  {
+    "p": "Ключевые методы MainActivity.kt (фрагмент листинга):"
+  },
+  {
+    "code": "    /** Начинает игру: компьютер делает первую догадку в середине диапазона. */\n    private fun startGame() {\n        val range = readRange() ?: return\n        minValue = range.first\n        maxValue = range.second\n        low = minValue\n        high = maxValue\n        currentGuess = (low + high) / 2\n        attempts = 1\n        gameActive = true\n        gameFinished = false\n        resultMessage = null\n        render()\n    }\n\n    /** Ответ «Меньше»: загаданное число находится ниже текущей догадки. */\n    private fun narrowRangeToLowerHalf() {\n        if (!gameActive || gameFinished) return\n        high = currentGuess - 1\n        makeNextGuess()\n    }\n\n    /** Ответ «Больше»: загаданное число находится выше текущей догадки. */\n    private fun narrowRangeToUpperHalf() {\n        if (!gameActive || gameFinished) return\n        low = currentGuess + 1\n        makeNextGuess()\n    }\n\n    private fun makeNextGuess() {\n        if (low > high) {\n            gameActive = false\n            gameFinished = true\n            resultMessage = getString(R.string.result_contradiction)\n            render()\n            return\n        }\n        currentGuess = (low + high) / 2\n        attempts++\n        render()\n    }\n\n    /** Число попыток, которое гарантирует деление диапазона пополам. */\n    private fun maxAttempts(): Int {\n        var size = maxValue - minValue + 1\n        var count = 0\n        while (size > 1) {\n            size = (size + 1) / 2\n            count++\n        }\n        return count\n    }\n\n    /** Открывает второе Activity, передавая ему границы диапазона. */\n    private fun openGuessActivity() {\n        val range = readRange() ?: return\n        minValue = range.first\n        maxValue = range.second\n        val intent = Intent(this, GuessActivity::class.java).apply {\n            putExtra(GuessActivity.EXTRA_MIN, minValue)\n            putExtra(GuessActivity.EXTRA_MAX, maxValue)\n        }\n        @Suppress(\"DEPRECATION\")\n        startActivityForResult(intent, REQUEST_GUESS)\n    }\n\n    @Suppress(\"DEPRECATION\")\n    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {\n        super.onActivityResult(requestCode, resultCode, data)\n        if (requestCode != REQUEST_GUESS) return\n        secondScreenMessage = if (resultCode == RESULT_OK && data != null) {\n            val target = data.getIntExtra(GuessActivity.EXTRA_TARGET, 0)\n            val tries = data.getIntExtra(GuessActivity.EXTRA_ATTEMPTS, 0)\n            if (data.getBooleanExtra(GuessActivity.EXTRA_WON, false)) {\n                getString(R.string.second_screen_result_won, target, tries)\n            } else {\n                getString(R.string.second_screen_result_lost, target)\n            }\n        } else {\n            getString(R.string.second_screen_result_cancelled)\n        }\n        render()\n    }"
+  },
+  {
+    "p": "Ключевые методы GuessActivity.kt (фрагмент листинга):"
+  },
+  {
+    "code": "        // фрагмент onCreate: границы диапазона приходят из Intent,\n        // при первом запуске загадывается случайное число\n        minValue = intent.getIntExtra(EXTRA_MIN, DEFAULT_MIN)\n        maxValue = intent.getIntExtra(EXTRA_MAX, DEFAULT_MAX)\n        if (maxValue <= minValue) maxValue = minValue + 1\n\n        if (savedInstanceState == null) {\n            target = randomTarget()\n            currentLow = minValue\n            currentHigh = maxValue\n        } else {\n            target = savedInstanceState.getInt(KEY_TARGET, minValue)\n            attempts = savedInstanceState.getInt(KEY_ATTEMPTS, 0)\n            currentLow = savedInstanceState.getInt(KEY_LOW, minValue)\n            currentHigh = savedInstanceState.getInt(KEY_HIGH, maxValue)\n            finished = savedInstanceState.getBoolean(KEY_FINISHED, false)\n            won = savedInstanceState.getBoolean(KEY_WON, false)\n            hintMessage = savedInstanceState.getString(KEY_HINT)\n        }\n\n        subtitleView.text = getString(R.string.guess_subtitle, minValue, maxValue)\n\n    /** Обрабатывает нажатие «Проверить» либо начинает новую игру после финала. */\n    private fun onCheckClicked() {\n        if (finished) {\n            startNewGame()\n            return\n        }\n        val text = guessInput.text.toString().trim()\n        val guess = text.toIntOrNull()\n        if (text.isEmpty() || guess == null) {\n            hintMessage = getString(R.string.error_empty)\n            render()\n            return\n        }\n        if (guess < currentLow || guess > currentHigh) {\n            hintMessage = getString(R.string.error_out_of_range)\n            render()\n            return\n        }\n\n        attempts++\n        when {\n            guess < target -> {\n                currentLow = guess + 1\n                hintMessage = getString(R.string.hint_greater)\n            }\n            guess > target -> {\n                currentHigh = guess - 1\n                hintMessage = getString(R.string.hint_less)\n            }\n            else -> {\n                finished = true\n                won = true\n                hintMessage = getString(R.string.hint_won, attempts)\n                sendResult()\n            }\n        }\n        guessInput.setText(\"\")\n        render()\n    }\n\n    private fun randomTarget(): Int = Random.nextInt(minValue, maxValue + 1)\n\n    /** Возвращает результат игры на первый экран. */\n    private fun sendResult() {\n        val data = Intent().apply {\n            putExtra(EXTRA_TARGET, target)\n            putExtra(EXTRA_ATTEMPTS, attempts)\n            putExtra(EXTRA_WON, won)\n        }\n        setResult(RESULT_OK, data)\n    }"
+  },
+  {
+    "p": "Разметка первого экрана (activity_main.xml) состоит из двух карточек: в первой поля minInput и maxInput, кнопка startButton, панель guessPanel с кнопками lessButton, greaterButton, correctButton и строка результата resultView, во второй — кнопка openGuessButton. Разметка второго экрана (activity_guess.xml) содержит подзаголовок guessSubtitle, счётчик attemptView, строку диапазона rangeView, подсказку hintView, поле guessInput и кнопки checkButton, surrenderButton и backButton. Готовый вид обоих экранов приведён на рисунках в разделе «Результат выполнения». Все описания Activity находятся в манифесте, а цвета интерфейса и фон второго экрана — в colors.xml."
+  },
+  {
+    "pb": true
+  },
+  {
+    "h": "Результат выполнения"
+  },
+  {
+    "img": "screenshots/result_main.png",
+    "width_cm": 6.5,
+    "caption": "Первый экран приложения: ввод диапазона и переход на второй экран"
+  },
+  {
+    "p": "Приложение собрано задачей Gradle assembleDebug, установлено на эмулятор Android и запущено. На первом экране задан диапазон от 1 до 100, задумано число 37, после чего нажата кнопка «Загадать число»."
+  },
+  {
+    "img": "screenshots/result_computer_guess.png",
+    "width_cm": 6.5,
+    "caption": "Первая догадка компьютера — середина диапазона: попытка 1 из 7"
+  },
+  {
+    "p": "Так как задуманное число меньше 50, нажата кнопка «Меньше». Следующей догадкой стала середина оставшегося диапазона 1–49, число 25, после ответа «Больше» диапазон сузился до 26–49, и компьютер предложил число 37. Нажатие кнопки «Угадал!» завершило игру."
+  },
+  {
+    "img": "screenshots/result_computer_won.png",
+    "width_cm": 6.5,
+    "caption": "Итог работы первого экрана: число угадано за три попытки"
+  },
+  {
+    "p": "Сообщение «Ваше число 37. Компьютер угадал его. Попыток: 3.» подтверждает, что деление диапазона пополам укладывается в семь попыток, отведённых для ста чисел. Введённые границы после завершения игры снова доступны для изменения, а кнопка «Ещё раз» начинает новую игру."
+  },
+  {
+    "img": "screenshots/result_guess_screen.png",
+    "width_cm": 6.5,
+    "caption": "Второй экран: пользователь угадывает случайное число из диапазона 1–100"
+  },
+  {
+    "p": "Кнопка «Теперь я угадаю» открыла второе Activity. Подзаголовок «Я загадал число от 1 до 100» совпадает с диапазоном, введённым на первом экране, — значит, границы дошли до второго экрана в объекте Intent."
+  },
+  {
+    "img": "screenshots/result_guess_hint.png",
+    "width_cm": 6.5,
+    "caption": "Подсказка после первой попытки: загаданное число меньше 50, диапазон сузился до 1–49"
+  },
+  {
+    "p": "После каждой попытки экран выводит направление поиска и оставшийся диапазон, а номер попытки увеличивается. На снимке видно, что после варианта 50 подсказка «Загаданное число меньше» сузила диапазон до 1–49 и счётчик попыток стал равен единице."
+  },
+  {
+    "img": "screenshots/result_guess_won.png",
+    "width_cm": 6.5,
+    "caption": "Победа на втором экране: число угадано за четыре попытки"
+  },
+  {
+    "p": "Загаданное число 18 найдено за четыре попытки: экран показал сообщение «Вы угадали! Попыток: 4.», скрыл подсказку и заменил кнопку «Проверить» кнопкой «Новая игра»."
+  },
+  {
+    "img": "screenshots/result_second_summary.png",
+    "width_cm": 6.5,
+    "caption": "Результат, возвращённый вторым экраном, отображается на первом экране"
+  },
+  {
+    "p": "После нажатия кнопки «На главный экран» в карточке «Теперь угадаю я» появилось сообщение «Второй экран: вы угадали число 18. Попыток: 4.». Это подтверждает, что результат игры вернулся через setResult и был обработан в onActivityResult первого Activity."
+  },
+  {
+    "img": "screenshots/result_rotation.png",
+    "width_cm": 13.0,
+    "caption": "Состояние первого экрана после поворота: введённый диапазон и результат сохранились"
+  },
+  {
+    "p": "При повороте экрана Activity пересоздаётся. На снимке в альбомной ориентации видно, что введённые границы 1–100 и сообщение о результате остались на месте: их восстановил onCreate из объекта Bundle, переданного в onSaveInstanceState."
+  },
+  {
+    "h": "Вывод"
+  },
+  {
+    "p": "В ходе работы изучены особенности работы с Activity в Android Studio. Создано приложение из двух экранов: первый угадывает задуманное пользователем число делением диапазона пополам, второй загадывает случайное число и подсказывает пользователю направление поиска. Освоены объявление Activity в манифесте, собственные темы и цветовые ресурсы для отдельного экрана, переход между экранами через объект Intent с передачей параметров, возврат результата методами setResult и onActivityResult, а также сохранение состояния Activity при пересоздании с помощью onSaveInstanceState. Проверено, что при диапазоне из ста чисел компьютер находит задуманное число не более чем за семь попыток, а данные, переданные между экранами в обе стороны, отображаются корректно."
+  }
+]

@@ -382,6 +382,71 @@
         ],
         "warnings": []
       }
+    },
+    "8": {
+      "status": "ready_for_review",
+      "directory": "ЛР8",
+      "methodical_guide": "Носова_ЛС_Разработка_моб_приложений.pdf",
+      "report_number": 8,
+      "theme": "Работа с Activity",
+      "variant": "самостоятельная работа",
+      "shared_resources": [
+        "Носова_ЛС_Разработка_моб_приложений.pdf"
+      ],
+      "notes": [
+        "Используется самостоятельное задание лабораторной работы №5 пособия Л. С. Носовой.",
+        "Приложение из двух экранов: на первом Activity компьютер угадывает задуманное число делением диапазона пополам, на втором Activity пользователь угадывает случайное число.",
+        "Границы диапазона передаются на второй экран объектом Intent, результат игры возвращается через startActivityForResult и setResult.",
+        "Листинги в отчёте приведены фрагментами ключевых методов (startGame, приём результата в onActivityResult, onCheckClicked, sendResult); полные исходники — в ЛР8/app/src/main/java/ru/tulsu/mobileprogramming/guessnumber/."
+      ],
+      "next_step": "Проверить готовую ЛР8 и подтвердить результат.",
+      "commands": {
+        "start_emulator": "powershell -ExecutionPolicy Bypass -File .\\start-emulator.ps1",
+        "build_install_run": "powershell -ExecutionPolicy Bypass -File .\\run-android.ps1 -Lab 8",
+        "build_text": "py _tools/make_docx.py --out ЛР8/text.docx --num 8 --theme Lab8 --content ЛР8/content_text.json --no-title"
+      },
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "artifacts": [
+        "ЛР8/app/src/main/AndroidManifest.xml",
+        "ЛР8/app/src/main/java/ru/tulsu/mobileprogramming/guessnumber/MainActivity.kt",
+        "ЛР8/app/src/main/java/ru/tulsu/mobileprogramming/guessnumber/GuessActivity.kt",
+        "ЛР8/app/src/main/res/layout/activity_main.xml",
+        "ЛР8/app/src/main/res/layout/activity_guess.xml",
+        "ЛР8/app/src/main/res/values/colors.xml",
+        "ЛР8/app/src/main/res/values/strings.xml",
+        "ЛР8/GuessNumber-debug.apk",
+        "ЛР8/content.json",
+        "ЛР8/content_text.json",
+        "ЛР8/screenshots/result_main.png",
+        "ЛР8/screenshots/result_computer_guess.png",
+        "ЛР8/screenshots/result_computer_won.png",
+        "ЛР8/screenshots/result_guess_screen.png",
+        "ЛР8/screenshots/result_guess_hint.png",
+        "ЛР8/screenshots/result_guess_won.png",
+        "ЛР8/screenshots/result_second_summary.png",
+        "ЛР8/screenshots/result_rotation.png",
+        "ЛР8/Отчет_ЛР8.docx",
+        "ЛР8/Отчет_ЛР8.pdf",
+        "ЛР8/text.docx",
+        "ЛР8/quality_gate.json"
+      ],
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-11-08T14:18:05Z",
+        "checks": [
+          "content_references",
+          "artifacts",
+          "report_docx",
+          "report_pdf",
+          "text_docx",
+          "report_structure",
+          "execution_evidence"
+        ],
+        "warnings": []
+      }
     }
   }
 }

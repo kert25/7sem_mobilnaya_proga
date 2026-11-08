@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GuessNumber" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/screen_background</item>
+        <item name="android:navigationBarColor">@color/panel</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <!-- Собственное оформление второго Activity: тёмный фон и светлый текст. -->
+    <style name="Theme.GuessNumber.Second" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/guess_background</item>
+        <item name="android:navigationBarColor">@color/guess_background</item>
+        <item name="android:colorAccent">@color/guess_accent</item>
+        <item name="android:windowBackground">@color/guess_background</item>
+    </style>
+</resources>

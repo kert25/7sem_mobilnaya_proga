@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guessScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/guess_background"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guess_title"
+            android:textColor="@color/guess_ink"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/guessSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/guess_muted"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/panel_dark_surface"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/attemptView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/guess_muted"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/rangeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:textColor="@color/guess_accent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hintView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:textColor="@color/guess_ink"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/guessInput"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/input_dark_surface"
+                android:gravity="center"
+                android:hint="@string/guess_input_hint"
+                android:imeOptions="actionDone"
+                android:inputType="numberSigned"
+                android:maxLength="9"
+                android:maxLines="1"
+                android:paddingHorizontal="12dp"
+                android:textColor="@color/guess_ink"
+                android:textColorHint="@color/guess_muted"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/checkButton"
+                style="?android:attr/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/button_primary_dark"
+                android:stateListAnimator="@null"
+                android:text="@string/button_check"
+                android:textAllCaps="false"
+                android:textColor="@color/guess_background"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/surrenderButton"
+                style="?android:attr/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_surface_dark"
+                android:stateListAnimator="@null"
+                android:text="@string/button_surrender"
+                android:textAllCaps="false"
+                android:textColor="@color/guess_ink"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/backButton"
+            style="?android:attr/buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/button_surface_dark"
+            android:stateListAnimator="@null"
+            android:text="@string/button_back"
+            android:textAllCaps="false"
+            android:textColor="@color/guess_muted"
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

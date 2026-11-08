@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Угадай число</string>
+
+    <!-- Первый экран -->
+    <string name="main_title">Угадай число</string>
+    <string name="main_subtitle">Загадайте число — я отгадаю его по вашим подсказкам</string>
+    <string name="range_label">Диапазон чисел</string>
+    <string name="range_from_hint">От</string>
+    <string name="range_to_hint">До</string>
+    <string name="range_dash">—</string>
+    <string name="range_error_empty">Введите оба числа диапазона</string>
+    <string name="range_error_invalid">Границы диапазона должны быть целыми числами</string>
+    <string name="range_error_order">Верхняя граница должна быть больше нижней</string>
+    <string name="range_error_big">Диапазон не должен превышать %1$d чисел</string>
+    <string name="button_start">Загадать число</string>
+    <string name="attempt_counter">Попытка %1$d из %2$d</string>
+    <string name="guess_question">Вы загадали число %1$d?</string>
+    <string name="button_less">Меньше</string>
+    <string name="button_greater">Больше</string>
+    <string name="button_correct">Угадал!</string>
+    <string name="result_won">Ваше число %1$d. Компьютер угадал его. Попыток: %2$d.</string>
+    <string name="result_contradiction">Ответы противоречат друг другу: такого числа нет в выбранном диапазоне.</string>
+    <string name="button_restart">Ещё раз</string>
+
+    <!-- Карточка перехода на второй экран -->
+    <string name="second_screen_title">Теперь угадаю я</string>
+    <string name="second_screen_subtitle">Я загадаю число из того же диапазона, а вы попробуете его угадать</string>
+    <string name="button_open_guess">Теперь я угадаю</string>
+    <string name="second_screen_result_won">Второй экран: вы угадали число %1$d. Попыток: %2$d.</string>
+    <string name="second_screen_result_lost">Второй экран: вы сдались, было загадано число %1$d.</string>
+    <string name="second_screen_result_cancelled">Второй экран: игра не была завершена.</string>
+
+    <!-- Второй экран -->
+    <string name="guess_title">Угадайте число</string>
+    <string name="guess_subtitle">Я загадал число от %1$d до %2$d</string>
+    <string name="guess_attempt">Попытка %1$d</string>
+    <string name="guess_input_hint">Ваш вариант</string>
+    <string name="button_check">Проверить</string>
+    <string name="button_new_game">Новая игра</string>
+    <string name="button_surrender">Сдаться</string>
+    <string name="button_back">На главный экран</string>
+    <string name="hint_greater">Загаданное число больше</string>
+    <string name="hint_less">Загаданное число меньше</string>
+    <string name="hint_won">Вы угадали! Попыток: %1$d.</string>
+    <string name="hint_range">Осталось: от %1$d до %2$d</string>
+    <string name="error_empty">Введите целое число</string>
+    <string name="error_out_of_range">Ваш вариант вне оставшегося диапазона</string>
+    <string name="surrender_text">Было загадано число %1$d</string>
+</resources>

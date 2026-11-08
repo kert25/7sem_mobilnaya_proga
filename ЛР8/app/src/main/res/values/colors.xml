@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Фон первого экрана и общие цвета интерфейса. -->
+    <color name="screen_background">#EEF1F8</color>
+    <color name="panel">#FFFFFF</color>
+    <color name="ink">#1F1633</color>
+    <color name="muted">#5F5A72</color>
+    <color name="accent">#4A3AC7</color>
+    <color name="accent_soft">#EAE6FF</color>
+    <color name="success">#2E7D32</color>
+    <color name="success_soft">#E6F4E7</color>
+    <color name="danger">#C62828</color>
+    <color name="button_fill">#F3EFFF</color>
+    <color name="button_stroke">#CFC3F5</color>
+    <color name="icon_background">#4A3AC7</color>
+
+    <!-- Новый цветовой ресурс для фона второго Activity. -->
+    <color name="guess_background">#14213D</color>
+    <color name="guess_panel">#1E2E4F</color>
+    <color name="guess_stroke">#3A5178</color>
+    <color name="guess_ink">#EAF1FF</color>
+    <color name="guess_muted">#A8BCDD</color>
+    <color name="guess_accent">#7C9CFF</color>
+</resources>
