@@ -1,24 +1,31 @@
-# Local command-line Android toolchain
+# Локальная JDK для Gradle ставится setup-android.ps1 во внешнюю папку
+# (%LOCALAPPDATA%\MobileLabs\jdk-17), поэтому в проекте её быть не должно.
 _android-tools/
 
-# Temporary verification logs
-setup-android.log
-setup-android.err.log
-build-lr*.log
-build-lr*.err.log
-emulator.log
-emulator.err.log
+# Локальная конфигурация машины
+local.properties
+.gradle/
 
-# Generated Kotlin/Android build artifacts and IDE settings
+# Временные логи проверок
+*.log
+
+# Сгенерированное сборкой
+**/build/
+**/.kotlin/
 __pycache__/
 _tools/kotlin/
-**/.gradle/
-**/.kotlin/
+
+# Android Studio: настройки проекта хранятся в git,
+# рабочее состояние окна и кеши — нет.
 **/.idea/
-**/build/
-**/local.properties
+!.idea/
+!.idea/**
+
 *.jar
-# The Gradle wrapper jar must be committed: a clone without it cannot build.
-!**/gradle/wrapper/gradle-wrapper.jar
 *.idsig
+# The Gradle wrapper jar must be committed: a clone without it cannot build.
+# Правило-исключение должно идти после `*.jar`, иначе оно не действует.
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# Временные файлы Word
 ~$*.docx

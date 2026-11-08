@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/labs/lr1" />
+            <option value="$PROJECT_DIR$/labs/lr1/additional" />
+            <option value="$PROJECT_DIR$/labs/lr1/main" />
+            <option value="$PROJECT_DIR$/labs/lr2" />
+            <option value="$PROJECT_DIR$/labs/lr2/additional" />
+            <option value="$PROJECT_DIR$/labs/lr2/main" />
+            <option value="$PROJECT_DIR$/labs/lr3" />
+            <option value="$PROJECT_DIR$/labs/lr3/additional" />
+            <option value="$PROJECT_DIR$/labs/lr3/main" />
+            <option value="$PROJECT_DIR$/ЛР4" />
+            <option value="$PROJECT_DIR$/ЛР4/app" />
+            <option value="$PROJECT_DIR$/ЛР5" />
+            <option value="$PROJECT_DIR$/ЛР5/app" />
+            <option value="$PROJECT_DIR$/ЛР6" />
+            <option value="$PROJECT_DIR$/ЛР6/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
