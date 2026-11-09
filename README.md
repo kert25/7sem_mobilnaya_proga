@@ -144,6 +144,25 @@ Gradle → Gradle JDK` — должен быть выбран `GRADLE_LOCAL_JAVA
 В `idea.log` строка `Instructing gradle to use java from …\MobileLabs\jdk-17`
 подтверждает, что всё сработало.
 
+### Android Studio пишет «Module not specified» у конфигурации `ЛР7 FontSize`
+
+Так бывает после добавления новой лабораторной: Android Studio переиспользовала
+сохранённую модель проекта и не выполнила Gradle sync, поэтому модуля `:lr7:app` в IDE
+нет и конфигурации запуска не к чему привязаться. В `idea.log` это видно по строке
+`Up-to-date models found in the cache. Not invoking Gradle sync.`
+
+Код, модуль и сборка при этом целы — проверяются из терминала:
+
+```powershell
+.\run-android.ps1 -Lab 7 -BuildOnly
+```
+
+Лечится принудительной синхронизацией: **File → Sync Project with Gradle Files**
+(кнопка со слоном и стрелкой в панели инструментов). После sync в
+`Build → Edit Configurations… → ЛР7 FontSize → General → Module` появляется
+`MobileLabs.lr7.app`, а в окне Gradle — ветка `:lr7:app`. Та же процедура нужна
+каждый раз, когда в `settings.gradle.kts` добавлен новый модуль.
+
 ### Синхронизация падает с «Your project path contains non-ASCII characters»
 
 Проверьте `android.overridePathCheck=true` в `gradle.properties` в корне проекта.
