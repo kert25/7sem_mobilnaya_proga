@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="ЛР8 GuessNumber" type="AndroidRunConfigurationType" factoryName="Android App">
+  <configuration default="false" name="ЛР8 GuessNumber" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
     <module name="MobileLabs.lr8.app" />
     <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
     <option name="DEPLOY" value="true" />

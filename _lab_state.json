@@ -270,7 +270,9 @@
       ],
       "notes": [
         "Используется самостоятельное задание лабораторной работы №3 пособия Л. С. Носовой.",
-        "Приложение считает нажатия на изображение, изменяет фон и параметры текста."
+        "Приложение считает нажатия на изображение, изменяет фон и параметры текста.",
+        "Для альбомной ориентации добавлена разметка res/layout-land/activity_main.xml: кнопка слева, счётчик и подсказка справа; портретная разметка не менялась.",
+        "Проверено на эмуляторе: после пяти нажатий в альбомной ориентации счётчик «Нажатий: 5» виден справа, при возврате в портретную ориентацию разметка прежняя, значение сохраняется."
       ],
       "next_step": "Проверить готовую ЛР6 и подтвердить результат.",
       "commands": {
@@ -285,27 +287,22 @@
       },
       "verification": {
         "status": "passed",
-        "checked_at": "2026-10-17T08:09:56Z",
+        "checked_at": "2026-11-09T07:02:01Z",
         "checks": [
-          "state_validation",
-          "xml_resources_parse",
-          "kotlin_compile",
-          "apk_signature_v1_v2_v3",
-          "emulator_install_and_launch",
-          "five_image_clicks",
-          "counter_state_persistence",
+          "content_references",
+          "artifacts",
           "report_docx",
           "report_pdf",
           "text_docx",
-          "quality_gate"
+          "report_structure",
+          "execution_evidence"
         ],
-        "warnings": [
-          "Штатная Gradle-сборка недоступна в текущем окружении из-за Java 27; APK собран вручную инструментами Android SDK и проверен на эмуляторе."
-        ]
+        "warnings": []
       },
       "artifacts": [
         "ЛР6/app/src/main/java/ru/tulsu/mobileprogramming/imagecounter/MainActivity.kt",
         "ЛР6/app/src/main/res/layout/activity_main.xml",
+        "ЛР6/app/src/main/res/layout-land/activity_main.xml",
         "ЛР6/app/src/main/res/drawable/click_illustration.xml",
         "ЛР6/app/src/main/res/drawable/image_surface.xml",
         "ЛР6/ImageCounter-debug.apk",
@@ -331,8 +328,11 @@
       "notes": [
         "Используется самостоятельное задание лабораторной работы №4 пособия Л. С. Носовой.",
         "Приложение «Размер шрифта» меняет размер надписи кнопками от 16 до 44 sp с шагом 4 sp; кнопки палитры перекрашивают фон.",
+        "Красная и зелёная кнопки по одному нажатию запускают автоматическую анимацию ValueAnimator длительностью 1500 мс к Color.RED/Color.GREEN: каналы меняются линейно, пока не упрутся в максимум (255) или минимум (0). Повторное нажатие во время анимации перенаправляет фон к другому цвету с текущего оттенка. Жёлтая кнопка, как и раньше, применяет yellowColor мгновенно.",
+        "Проверено на эмуляторе: одно нажатие красной кнопки с жёлтого фона даёт (242,183,5) → (248,96,3) → (255,0,0), одно нажатие зелёной — (255,0,0) → (45,210,0) → (0,255,0); жёлтая — (242,183,5) сразу. Цвет фона сохраняется при повороте экрана.",
         "Создана собственная иконка: векторный передний план, адаптивный значок mipmap-anydpi-v26 и растровые PNG для старых версий; проверена на домашнем экране эмулятора.",
-        "Вместо ConstraintLayout из методички использован LinearLayout: дополнительная библиотека androidx.constraintlayout не нужна, идентификатор root_layout сохранён."
+        "Вместо ConstraintLayout из методички использован LinearLayout: дополнительная библиотека androidx.constraintlayout не нужна, идентификатор root_layout сохранён.",
+        "По просьбе пользователя отчёт ЛР7 (content.json, content_text.json, DOCX, PDF, quality_gate.json) не пересобирался: изменено только поведение приложения, APK пересобран, новые снимки поведения лежат в screenshots/color_*.png."
       ],
       "next_step": "Проверить готовую ЛР7 и подтвердить результат.",
       "commands": {
@@ -354,6 +354,8 @@
         "ЛР7/content.json",
         "ЛР7/content_text.json",
         "ЛР7/screenshots/result_main.png",
+        "ЛР7/screenshots/color_red_full.png",
+        "ЛР7/screenshots/color_green_full.png",
         "ЛР7/screenshots/result_home.png",
         "ЛР7/screenshots/result_icon_info.png",
         "ЛР7/Отчет_ЛР7.docx",
