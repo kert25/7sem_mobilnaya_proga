@@ -1,0 +1,45 @@
+{
+  "schema_version": 3,
+  "lab": 9,
+  "report_number": 9,
+  "status": "passed",
+  "checked_at": "2026-11-14T15:15:42Z",
+  "checks": [
+    "content_references",
+    "artifacts",
+    "report_docx",
+    "report_pdf",
+    "text_docx",
+    "report_structure",
+    "execution_evidence"
+  ],
+  "warnings": [],
+  "files": [
+    "ЛР9/Отчет_ЛР9.docx",
+    "ЛР9/Отчет_ЛР9.pdf",
+    "ЛР9/text.docx"
+  ],
+  "sha256": {
+    "_context.json": "18e6f0c6c5780c54a0ffb87ef5dc303125a8e5aea342377c91e8576eb3739142",
+    "ЛР9/app/src/main/AndroidManifest.xml": "2ddb421a5244d8db8f8ad82cfdd71e3cf93cec22156eaa63d6dcffea0d89b82a",
+    "ЛР9/app/src/main/java/ru/tulsu/mobileprogramming/notepad/MainActivity.kt": "4c95bdfe355e332a1d9ff0884583b5e0ad92930115a4fb5fb875efe8c14ec24c",
+    "ЛР9/app/src/main/res/drawable/ic_launcher_foreground.xml": "12977cef9ce77016ee293f6a1b0e50571040b2d9c2a55f4b9559041c347fc645",
+    "ЛР9/app/src/main/res/layout/activity_main.xml": "628d1275709c0dbbe67fff819db57fbbddd1ed48b3895525756bfac8d1a5669a",
+    "ЛР9/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml": "d8269a76b363acec21e3d7bc041a41853fdf492f28020c1db75d2ae32ab7f620",
+    "ЛР9/app/src/main/res/values/colors.xml": "6d4ec911990e3b44953904298abc8429daeebd54580bd423d4008425b79c24c8",
+    "ЛР9/app/src/main/res/values/strings.xml": "9c5fb2e0dc4788d280292aa964f68ff3264feb9cc4810df157af125241965bda",
+    "ЛР9/app/src/main/res/values/themes.xml": "f969d37d81bac9e36743c39381fa257f4a1034ba0cc39818b986b7f8b597e2e9",
+    "ЛР9/content.json": "dddbc1823ec26e7d8b5a97b888062446fa4af191d09a5c501e2c0fa8b37c3074",
+    "ЛР9/content_text.json": "7b00d97764073c51c62abf79ee5b9d33b7308c1842dfac613995393c4673dd53",
+    "ЛР9/Notepad-debug.apk": "75f6005cb61917a10bcb13014e4b4dd2d80322d68b286746fc5b89e48d4848a3",
+    "ЛР9/screenshots/result_after_restart.png": "b6c02639e20650013e91660fa80cd72bc35b82806744aa5a4662d0a2962d07e2",
+    "ЛР9/screenshots/result_font_increased.png": "f9dca52a4cb28576e31aac6f88e0810269228c86537858e8f99da1cb211ece39",
+    "ЛР9/screenshots/result_icon.png": "b66f91bd14f9f6fe069dc3cab10df6952d3603a3600063abbf2eeaf82536883e",
+    "ЛР9/screenshots/result_sheet1.png": "77712daabf06c8e487efbaac0aee97ce086eee4a28cc1b0c09ee91045efb509b",
+    "ЛР9/screenshots/result_sheet1_returned.png": "688e51b5d634f35ebcccdf8869dd2f0121e9f0c5a4d6dd77337c5af4f2ead587",
+    "ЛР9/screenshots/result_sheet2.png": "ab8c2cd4598cead44cf4f05d8264880dba19bc4b31319cd3bf55d74a0eb95b1a",
+    "ЛР9/text.docx": "98e1263da2d5a553c97dad196eb7e5a7b1327887d99d1ccbe404d21ad76545c6",
+    "ЛР9/Отчет_ЛР9.docx": "d283d48e14a33ff79b9780188e89359b07e0ebe772e0322d2c84b92efc4f36c7",
+    "ЛР9/Отчет_ЛР9.pdf": "ccb38413242a2ae59beb6e8bff54c1b5f8341262b5c4326aafe5d0284bec7e74"
+  }
+}

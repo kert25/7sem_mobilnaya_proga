@@ -1,8 +1,8 @@
 ﻿[CmdletBinding()]
 param(
-    # 1..3 — консольные лабораторные, 4..8 — Android-приложения.
+    # 1..3 — консольные лабораторные, 4..9 — Android-приложения.
     [Parameter(Mandatory = $true)]
-    [ValidateSet('1', '2', '3', '4', '5', '6', '7', '8')]
+    [ValidateSet('1', '2', '3', '4', '5', '6', '7', '8', '9')]
     [string]$Lab,
     # Для ЛР1–ЛР3: запустить дополнительное задание вместо основного.
     [switch]$Additional,
@@ -26,6 +26,7 @@ $packages = @{
     '6' = 'ru.tulsu.mobileprogramming.imagecounter'
     '7' = 'ru.tulsu.mobileprogramming.fontsize'
     '8' = 'ru.tulsu.mobileprogramming.guessnumber'
+    '9' = 'ru.tulsu.mobileprogramming.notepad'
 }
 
 Push-Location $root

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Блокнот</string>
+
+    <!-- Экран заметки -->
+    <string name="note_hint">Напишите здесь заметку</string>
+    <string name="button_next_sheet">Другая заметка</string>
+    <string name="sheet_counter">Лист %1$d из %2$d</string>
+
+    <!-- Размер шрифта заметки (задание для самостоятельной работы) -->
+    <string name="font_label">Размер шрифта</string>
+    <string name="font_decrease">A−</string>
+    <string name="font_increase">A+</string>
+    <string name="font_value">%1$d sp</string>
+    <string name="font_minimum">Минимальный размер шрифта — %1$d sp</string>
+    <string name="font_maximum">Максимальный размер шрифта — %1$d sp</string>
+</resources>

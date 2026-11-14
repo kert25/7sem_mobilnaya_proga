@@ -4,7 +4,8 @@
   "project_notes": [
     "Для ЛР1 используется локальная методичка Kotlin_lab01_0.pdf.",
     "Пособие Носовой используется начиная с общей ЛР4: номер лабораторной в пособии на три меньше общего номера.",
-    "Сборка ЛР4, ЛР5, ЛР6 идёт штатным Gradle через run.ps1: скрипт подставляет локальную JDK 17 из _android-tools, поэтому системная Java 27 сборке не мешает."
+    "Сборка ЛР4, ЛР5, ЛР6 идёт штатным Gradle через run.ps1: скрипт подставляет локальную JDK 17 из _android-tools, поэтому системная Java 27 сборке не мешает.",
+    "Все .ps1 в проекте хранятся в UTF-8 с BOM: без BOM PowerShell 5.1 читает кириллицу в путях как ANSI, и run-android.ps1 не находит APK в папке ЛР<N>."
   ],
   "labs": {
     "1": {
@@ -446,6 +447,79 @@
           "text_docx",
           "report_structure",
           "execution_evidence"
+        ],
+        "warnings": []
+      }
+    },
+    "9": {
+      "status": "ready_for_review",
+      "directory": "ЛР9",
+      "methodical_guide": "Носова_ЛС_Разработка_моб_приложений.pdf",
+      "report_number": 9,
+      "theme": "Работа с Activity. Блокнот",
+      "variant": "самостоятельная работа",
+      "shared_resources": [
+        "Носова_ЛС_Разработка_моб_приложений.pdf"
+      ],
+      "notes": [
+        "Используется самостоятельное задание лабораторной работы №6 пособия Л. С. Носовой.",
+        "Листы заметок реализованы одним Activity: массив цветов SHEET_COLORS и номер листа sheetNumber. Промежуточная версия из трёх Activity не создавалась, потому что пункты 36–39 методички требуют её удалить.",
+        "Отличие от листинга методички: текст заметки загружается безусловно (getString(..., \"\")), иначе при переходе на пустой лист в поле оставался текст предыдущего.",
+        "Задание для самостоятельной работы: размер шрифта 12–32 sp с шагом 4 sp, свой для каждого листа, сохраняется в SharedPreferences ключом font<N>.",
+        "Кириллицу на эмулятор вводили через буфер обмена хоста: adb shell input text не принимает не-ASCII символы (NullPointerException в InputShellCommand).",
+        "Эмулятор запускали холодно (emulator -avd LR6_Pixel_6 -no-snapshot): быстрый запуск восстанавливал снимок с зависшим system_server, экран оставался чёрным."
+      ],
+      "next_step": "Проверить готовую ЛР9 и подтвердить результат.",
+      "commands": {
+        "start_emulator": "powershell -ExecutionPolicy Bypass -File .\\start-emulator.ps1",
+        "build_install_run": "powershell -ExecutionPolicy Bypass -File .\\run-android.ps1 -Lab 9",
+        "cold_boot_emulator": "emulator -avd LR6_Pixel_6 -no-snapshot -no-boot-anim (быстрый запуск восстанавливал снимок с зависшим system_server)"
+      },
+      "tooling": {
+        "report_inspector": "bundled:inspect_docx",
+        "pdf_text": "bundled:pdf_text"
+      },
+      "artifacts": [
+        "ЛР9/app/src/main/AndroidManifest.xml",
+        "ЛР9/app/src/main/java/ru/tulsu/mobileprogramming/notepad/MainActivity.kt",
+        "ЛР9/app/src/main/res/layout/activity_main.xml",
+        "ЛР9/app/src/main/res/values/colors.xml",
+        "ЛР9/app/src/main/res/values/strings.xml",
+        "ЛР9/app/src/main/res/values/themes.xml",
+        "ЛР9/app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "ЛР9/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "ЛР9/Notepad-debug.apk",
+        "ЛР9/content.json",
+        "ЛР9/content_text.json",
+        "ЛР9/screenshots/result_sheet1.png",
+        "ЛР9/screenshots/result_sheet2.png",
+        "ЛР9/screenshots/result_font_increased.png",
+        "ЛР9/screenshots/result_sheet1_returned.png",
+        "ЛР9/screenshots/result_after_restart.png",
+        "ЛР9/screenshots/result_icon.png",
+        "ЛР9/Отчет_ЛР9.docx",
+        "ЛР9/Отчет_ЛР9.pdf",
+        "ЛР9/text.docx",
+        "ЛР9/quality_gate.json"
+      ],
+      "verification": {
+        "status": "passed",
+        "checked_at": "2026-11-14T15:16:38Z",
+        "checks": [
+          "content_references",
+          "artifacts",
+          "report_docx",
+          "report_pdf",
+          "text_docx",
+          "report_structure",
+          "execution_evidence",
+          "gradle_assemble_debug",
+          "apk_install_and_launch",
+          "notes_persist_on_flip",
+          "notes_persist_after_restart",
+          "font_size_per_sheet_12_32",
+          "empty_sheet_has_no_previous_text",
+          "launcher_icon_in_drawer"
         ],
         "warnings": []
       }
