@@ -3,7 +3,7 @@
   "lab": 9,
   "report_number": 9,
   "status": "passed",
-  "checked_at": "2026-11-14T15:15:42Z",
+  "checked_at": "2026-11-14T16:54:06Z",
   "checks": [
     "content_references",
     "artifacts",
@@ -30,7 +30,7 @@
     "ЛР9/app/src/main/res/values/strings.xml": "9c5fb2e0dc4788d280292aa964f68ff3264feb9cc4810df157af125241965bda",
     "ЛР9/app/src/main/res/values/themes.xml": "f969d37d81bac9e36743c39381fa257f4a1034ba0cc39818b986b7f8b597e2e9",
     "ЛР9/content.json": "dddbc1823ec26e7d8b5a97b888062446fa4af191d09a5c501e2c0fa8b37c3074",
-    "ЛР9/content_text.json": "7b00d97764073c51c62abf79ee5b9d33b7308c1842dfac613995393c4673dd53",
+    "ЛР9/content_text.json": "b7964c4baa7453b78843c50d4d5168821f59f0180e8dcc87d8e845e1a01827fd",
     "ЛР9/Notepad-debug.apk": "75f6005cb61917a10bcb13014e4b4dd2d80322d68b286746fc5b89e48d4848a3",
     "ЛР9/screenshots/result_after_restart.png": "b6c02639e20650013e91660fa80cd72bc35b82806744aa5a4662d0a2962d07e2",
     "ЛР9/screenshots/result_font_increased.png": "f9dca52a4cb28576e31aac6f88e0810269228c86537858e8f99da1cb211ece39",
@@ -38,7 +38,7 @@
     "ЛР9/screenshots/result_sheet1.png": "77712daabf06c8e487efbaac0aee97ce086eee4a28cc1b0c09ee91045efb509b",
     "ЛР9/screenshots/result_sheet1_returned.png": "688e51b5d634f35ebcccdf8869dd2f0121e9f0c5a4d6dd77337c5af4f2ead587",
     "ЛР9/screenshots/result_sheet2.png": "ab8c2cd4598cead44cf4f05d8264880dba19bc4b31319cd3bf55d74a0eb95b1a",
-    "ЛР9/text.docx": "98e1263da2d5a553c97dad196eb7e5a7b1327887d99d1ccbe404d21ad76545c6",
+    "ЛР9/text.docx": "e70f2c6ec92d29d04f0126b2eae446c6b3db9053d062a1e8453bf60c262e9264",
     "ЛР9/Отчет_ЛР9.docx": "d283d48e14a33ff79b9780188e89359b07e0ebe772e0322d2c84b92efc4f36c7",
     "ЛР9/Отчет_ЛР9.pdf": "ccb38413242a2ae59beb6e8bff54c1b5f8341262b5c4326aafe5d0284bec7e74"
   }

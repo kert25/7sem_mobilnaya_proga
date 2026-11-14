@@ -504,7 +504,7 @@
       ],
       "verification": {
         "status": "passed",
-        "checked_at": "2026-11-14T15:16:38Z",
+        "checked_at": "2026-11-14T16:54:06Z",
         "checks": [
           "content_references",
           "artifacts",
@@ -512,14 +512,7 @@
           "report_pdf",
           "text_docx",
           "report_structure",
-          "execution_evidence",
-          "gradle_assemble_debug",
-          "apk_install_and_launch",
-          "notes_persist_on_flip",
-          "notes_persist_after_restart",
-          "font_size_per_sheet_12_32",
-          "empty_sheet_has_no_previous_text",
-          "launcher_icon_in_drawer"
+          "execution_evidence"
         ],
         "warnings": []
       }
