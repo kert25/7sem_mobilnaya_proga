@@ -452,7 +452,7 @@
       }
     },
     "9": {
-      "status": "ready_for_review",
+      "status": "completed",
       "directory": "ЛР9",
       "methodical_guide": "Носова_ЛС_Разработка_моб_приложений.pdf",
       "report_number": 9,
@@ -469,7 +469,7 @@
         "Кириллицу на эмулятор вводили через буфер обмена хоста: adb shell input text не принимает не-ASCII символы (NullPointerException в InputShellCommand).",
         "Эмулятор запускали холодно (emulator -avd LR6_Pixel_6 -no-snapshot): быстрый запуск восстанавливал снимок с зависшим system_server, экран оставался чёрным."
       ],
-      "next_step": "Проверить готовую ЛР9 и подтвердить результат.",
+      "next_step": "ЛР9 согласована пользователем, замечаний нет.",
       "commands": {
         "start_emulator": "powershell -ExecutionPolicy Bypass -File .\\start-emulator.ps1",
         "build_install_run": "powershell -ExecutionPolicy Bypass -File .\\run-android.ps1 -Lab 9",
